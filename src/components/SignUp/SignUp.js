@@ -60,7 +60,7 @@ const SignUp = () => {
         },
       };
       const data = await axios.post(
-        "http://localhost:5000/register",
+        "https://realestatehrrm.onrender.com/register",
         { email, password },
         config
       );
