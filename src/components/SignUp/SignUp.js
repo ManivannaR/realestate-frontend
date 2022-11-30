@@ -67,7 +67,7 @@ const SignUp = () => {
       if (data.data.status === "Failed") {
         alert("Invalid data entred or users already exist");
       } else {
-        navigate("/login");
+        navigate("/");
       }
     }
   };
