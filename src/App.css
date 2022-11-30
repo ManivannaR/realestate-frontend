@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+}
+
+.App {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+
+.table-form {
+  position: absolute;
+  left: 20%;
+  right: 0%;
+  top: 10%;
+  bottom: 0%;
+  background: #fafbfc;
+}
+
+.body {
+  position: absolute;
+  top: 22%;
+}
+
+.footer {
+  position: absolute;
+  left: 34%;
+  top: 92%;
+}
+
+.footer-buttons {
+  margin-right: 10px;
+  width: 187px;
+  height: 40px;
+  box-shadow: 0px 13px 25px rgba(255, 252, 252, 0.15);
+  border-radius: 500px;
+  border: none;
+  font-family: "Source Sans Pro";
+  color: #ffffff;
+}
+
+#footer-button-1 {
+  background: #6ab4f8;
+}
+
+#footer-button-2 {
+  background: #4c57b6;
+}
+
+.footer-buttons:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,12 @@
+.add-property-heading {
+  position: absolute;
+  left: 2%;
+  top: 1%;
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 31px;
+  text-transform: uppercase;
+  color: #7d7d7d;
+}

@@ -1,0 +1,85 @@
+.search-bar-div {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 90%;
+}
+
+.search-bar-container {
+  position: absolute;
+  left: 3%;
+  top: 15%;
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.search-input {
+  border: none;
+  position: absolute;
+  left: 6%;
+  top: 27%;
+}
+
+.search-bar-break-line {
+  width: 1px;
+  height: 70%;
+  position: absolute;
+  left: 75%;
+  top: 15%;
+  background: #e6e6e6;
+}
+
+.search-icon {
+  width: 17px;
+  position: absolute;
+  left: 85%;
+  top: 30%;
+}
+
+.search-icon:hover {
+  cursor: pointer;
+}
+
+.add-property-button-container {
+  position: absolute;
+  left: 79%;
+  top: 17%;
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  background: #6ab4f8;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.add-property-button-container:hover {
+  cursor: pointer;
+}
+
+.add-icon {
+  position: absolute;
+  left: -2%;
+  top: 27%;
+  width: 12px;
+}
+
+.add-icon:hover {
+  cursor: pointer;
+}
+
+.add-property-button {
+  position: absolute;
+  left: 19%;
+  top: 10%;
+  border: none;
+  width: 110px;
+  height: 30px;
+  background: #6ab4f8;
+}
+
+.add-property-button:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,76 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #F5F5F5;
+    height: 625px;
+}
+.main-form{
+    background-color: white;
+    height: 400px;
+    width: 400px;
+    border: 2px solid #74b9ff;
+    border-radius: 5px;
+}
+.main-form img{
+    margin: 20px;
+    width: 100px;
+}
+.input-1 input{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 300px;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+}
+.input-field input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+    
+}
+.new-input-field input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+}
+.input-field .toggle-icon{
+    position: relative;
+    right: 15px;
+}
+.input-field .input-2{
+    position: relative;
+    left: 10px;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+}
+.new-input-field .new-toggle{
+    position: relative;
+    right: 15px;
+}
+.new-input-field .input-3{
+    position: relative;
+    left: 10px;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+}
+.tonew button{
+    margin-top: 10px;
+    background-color: #4C57B6;
+    width: 300px;
+    border: 1px solid #4C57B6;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+.tonew button:hover{
+    background-color: #e74c3c;
+    border: 1px solid #e74c3c;
+    border-radius: 3px;
+}
+.new-toggle, .toggle-icon{
+    color: #4C57B6;
+}

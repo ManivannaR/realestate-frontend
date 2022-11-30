@@ -1,0 +1,91 @@
+.navbar-left{
+position: absolute;
+left: 0%;
+right: 80%;
+top: 0%;
+bottom: 0%;
+background: #E1F9F4;
+}
+
+.logo{
+position: absolute;
+left: 30%;
+top: 3%;
+font-family: 'Source Sans Pro';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+}
+
+.navbar-container{
+list-style: none;
+}
+
+.navbar-icons{
+position: absolute;
+left: 19%;
+width: 14px;
+}
+
+.navbar-links{
+position: absolute;
+left: 29%;
+font-family: 'Source Sans Pro';
+}
+
+#navbar-home-icon{  
+top: 20%;
+}
+
+#property-link{
+top: 19.4%;
+color: #2289FF;
+}
+
+#navbar-bell-icon{
+top: 27.5%;
+height: 16px;
+}
+
+#assistance-link{
+top: 27.1%;
+color: #AAAAAA;
+}
+
+#navbar-download-icon{
+top: 35%;
+height: 16px;
+}
+
+#received-interest-link{
+top: 34.6%;
+color: #AAAAAA;
+}
+
+#navbar-upload-icon{
+top: 42.5%;
+height: 16px;
+}
+
+#sent-interest-link{
+top: 42.1%;
+color: #AAAAAA;
+}
+
+#navbar-eye-icon{
+top: 50%;
+}
+
+#property-views-link{
+top: 49.2%;
+color: #AAAAAA;
+}
+
+#navbar-tag-icon{
+top: 57.5%;
+}
+
+#tariff-plan-link{
+top: 57%;
+color: #AAAAAA;
+}

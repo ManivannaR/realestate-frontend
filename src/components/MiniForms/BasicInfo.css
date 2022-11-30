@@ -1,0 +1,36 @@
+.basic-info,
+.general-info,
+.location-info,
+.property-detail {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.form-box {
+  width: 500px;
+  height: 60px;
+}
+
+.select-input {
+  display: block;
+  width: 500px;
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #7d7d7d;
+  margin-top: 10px;
+}
+
+label {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  color: #7d7d7d;
+}

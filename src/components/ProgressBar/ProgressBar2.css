@@ -1,0 +1,83 @@
+.progress-bar-container {
+  position: absolute;
+  left: 5%;
+  top: 11%;
+  width: 90%;
+  height: 50px;
+  display: flex;
+  background: #ffffff;
+  box-shadow: 10px 14px 70px rgba(0, 0, 0, 0.03);
+  border-radius: 500px;
+  justify-content: space-between;
+}
+
+.box {
+  width: 270px;
+  height: 50px;
+  border-radius: 500px;
+  text-align: center;
+}
+
+#step-2 {
+  background-color: #6ab4f8;
+}
+
+.num {
+  position: absolute;
+  top: 18%;
+  width: 33px;
+  height: 31px;
+  background: #e1f9f4;
+  font-family: "Source Sans Pro";
+  border-radius: 500px;
+  text-align: center;
+  line-height: 30px;
+}
+
+#num-1 {
+  left: 4%;
+}
+
+#num-2 {
+  left: 28%;
+  background: #ffffff;
+}
+
+#num-3 {
+  left: 54%;
+}
+
+#num-4 {
+  left: 78%;
+}
+
+.text {
+  position: absolute;
+  top: 0%;
+  font-family: "Source Sans Pro";
+  text-align: center;
+  height: 50px;
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 45px;
+  color: #aaaaaa;
+}
+
+#text-1 {
+  left: 8%;
+}
+
+#text-2 {
+  left: 32%;
+  color: #ffffff;
+}
+
+#text-3 {
+  left: 58%;
+}
+
+#text-4 {
+  left: 82%;
+}
