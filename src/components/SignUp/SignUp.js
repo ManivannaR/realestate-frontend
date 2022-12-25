@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Icon } from "react-icons-kit";
 import { eyeDisabled } from "react-icons-kit/ionicons/eyeDisabled";
 import { eye } from "react-icons-kit/ionicons/eye";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
@@ -14,23 +13,13 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const [newtype, setNewType] = useState("password");
-  const [newicon, setNewIcon] = useState(eyeDisabled);
-  const [oldtype, setOldType] = useState("password");
-  const [oldicon, setOldIcon] = useState(eyeDisabled);
+  const [newType, setNewType] = useState("password");
+  const [newIcon, setNewIcon] = useState(eyeDisabled);
+  const [oldType, setOldType] = useState("password");
+  const [oldIcon, setOldIcon] = useState(eyeDisabled);
 
-  const ToggleSubmit = () => {
-    if (newtype === "password") {
-      setNewIcon(eye);
-      setNewType("text");
-    } else {
-      setNewIcon(eyeDisabled);
-      setNewType("password");
-    }
-  };
-
-  const newToggleSubmit = () => {
-    if (newtype === "password") {
+  const oldToggleSubmit = () => {
+    if (oldType === "password") {
       setOldIcon(eye);
       setOldType("text");
     } else {
@@ -39,85 +28,96 @@ const SignUp = () => {
     }
   };
 
+  const newToggleSubmit = () => {
+    if (newType === "password") {
+      setNewIcon(eye);
+      setNewType("text");
+    } else {
+      setNewIcon(eyeDisabled);
+      setNewType("password");
+    }
+  };
+
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    let Data = {
-      email: email,
-      password: password,
+    let data = {
+      email,
+      password,
     };
-    // check all the required eligiblity criteria for email and password
-    if (!Data.email.split("@").length > 1) {
-      alert("Email format is incorrect");
-    } else if (Data.password.length < 5) {
-      alert("Please give a Password of atleast 5 length Charcters");
-    } else if (Data.password !== confirmPassword) {
-      alert("Password and Confirm Password must be same");
+
+    if (data.email === "") {
+      alert("Enter your email");
+    } else if (data.password === "") {
+      alert("Enter your password");
+    } else if (data.password !== confirmPassword) {
+      alert("Password and Confirm Password does not match.");
     } else {
-      const config = {
+      const result = await fetch("http://localhost:5000/register", {
+        method: "POST",
+        body: JSON.stringify(data),
         headers: {
           "Content-type": "application/json",
         },
-      };
-      const data = await axios.post(
-        "https://realestatehrrm.onrender.com/register",
-        { email, password },
-        config
-      );
-      if (data.data.status === "Failed") {
-        alert("Invalid data entred or users already exist");
+      });
+      const resData = await result.json();
+      if (resData.status === "Failed") {
+        alert(resData.message);
       } else {
+        alert("Registration Successful. Taking you to Login page.");
         navigate("/");
       }
     }
   };
 
   return (
-    <div className="main-container">
-      <div className="main-form">
-        <div className="logo">
+    <div className="reg-container">
+      <div className="reg-form">
+        <div className="reg-logo">
           <img src={require("../Images/Logo.jpg")} alt="palce"></img>
         </div>
         <div className="paragraph">
           <p>Create a New Account</p>
         </div>
         <form onSubmit={submitHandler}>
-          <div className="input-1">
+          <div className="input-div">
             <input
+              className="reg-inputs"
+              type="text"
               name="Mail-ID"
               placeholder="Mail ID"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             ></input>
           </div>
-          <div className="input-field">
+          <div className="input-div">
             <input
+              className="reg-inputs"
               name="password"
               placeholder="Password"
               value={password}
-              type={newtype}
+              type={oldType}
               onChange={(e) => setPassword(e.target.value)}
-              className="input-2"
             />
-            <span onClick={ToggleSubmit}>
-              <Icon icon={newicon} size={25} className="toggle-icon" />
+            <span onClick={oldToggleSubmit} className="toggle-icon">
+              <Icon icon={oldIcon} size={25} />
             </span>
           </div>
-          <div className="new-input-field">
+          <div className="input-div">
             <input
               name="Confirm password"
               placeholder="Confirm Password"
               value={confirmPassword}
-              type={oldtype}
+              type={newType}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="input-3"
+              className="reg-inputs"
             />
-            <span onClick={newToggleSubmit}>
-              <Icon icon={oldicon} size={25} className="new-toggle" />
+            <span onClick={newToggleSubmit} className="toggle-icon">
+              <Icon icon={newIcon} size={25} />
             </span>
           </div>
           <div className="tonew">
-            <button type="submit" className="button">
+            <button type="submit" className="reg-button">
               Sign Up
             </button>
           </div>

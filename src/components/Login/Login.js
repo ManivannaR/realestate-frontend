@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { Icon } from "react-icons-kit";
 import { eyeDisabled } from "react-icons-kit/ionicons/eyeDisabled";
 import { eye } from "react-icons-kit/ionicons/eye";
-import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -26,83 +25,73 @@ const Login = () => {
   };
 
   const submitHandler = async (e) => {
-    e.preventDefault(); // prevent the default nature
+    e.preventDefault();
 
-    const Data = {
-      // the data type
-      email: email,
-      password: password,
-    };
+    const data = { email, password };
+    localStorage.setItem("userId", data.email);
 
-    localStorage.setItem("userId", Data.email);
-    try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-        },
-      };
-      const data = await axios.post(
-        "https://realestatehrrm.onrender.com/login",
-        { email, password },
-        config
-      );
-
-      if (data.data.status === "Sucess") {
-        navigate("/homepage");
-      } else {
-        alert("something went wrong");
-      }
-    } catch (error) {
-      console.log(error);
+    const res = await fetch("http://localhost:5000/login", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    const resData = await res.json();
+    if (resData.status === "Success") {
+      navigate("/homepage");
+    } else {
+      alert(resData.message);
     }
   };
 
   return (
     <div>
-      <div className="Container">
-        <div className="Main-form">
-          <div className="logo">
+      <div className="log-container">
+        <div className="log-form">
+          <div className="log-logo">
             <img src={require("../Images/Logo.jpg")} alt="logo"></img>
           </div>
-          <div className="Paragraph">
-            <p>Enter your crentitals to access your account</p>
+          <div className="log-paragraph">
+            <p>Enter your credentials to access your account</p>
           </div>
-          <form action="" method="POST" className="form">
-            <div>
+          <form method="POST" className="form" onSubmit={submitHandler}>
+            <div className="log-field">
               <input
+                type="text"
                 name="User-ID"
-                placeholder="User ID"
+                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="Input-1"
+                className="log-input"
               ></input>
             </div>
-            <div className="Input-field">
+            <div className="log-field">
               <input
                 name="password"
-                placeholder="password"
+                placeholder="Password"
                 value={password}
                 type={type}
                 onChange={(e) => setPassword(e.target.value)}
-                className="Input-2"
+                className="log-input"
               />
               <span onClick={handleToggle}>
-                <Icon icon={icon} size={25} className="Toggle-icon" />
+                <Icon icon={icon} size={25} className="toggle-icon" />
               </span>
             </div>
             <div className="Tonew">
-              <button type="submit" className="Button" onClick={submitHandler}>
+              <button type="submit" className="reg-button">
                 Sign In
               </button>
             </div>
           </form>
-          <div>
+          <div className="no-account">
             <p>
               <b>Don't have account ?</b>
             </p>
           </div>
           <Link to="/signup">
-            <p className="Tonew">Create Account</p>
+            <p className="reg-link">Create Account</p>
           </Link>
         </div>
       </div>

@@ -100,17 +100,13 @@ const MainContainer = () => {
           id="footer-button-2"
           onClick={async () => {
             if (page === 3) {
-              const res = await fetch(
-                "https://realestatehrrm.onrender.com/property",
-                {
-                  method: "POST",
-                  body: JSON.stringify(formData),
-                  headers: {
-                    "content-type": "application/json",
-                  },
-                }
-              );
-              console.log(res);
+              const res = await fetch("http://localhost:5000/property", {
+                method: "POST",
+                body: JSON.stringify(formData),
+                headers: {
+                  "content-type": "application/json",
+                },
+              });
               if (res.ok) {
                 navigate("/homepage");
               }

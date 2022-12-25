@@ -1,77 +1,37 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.Container{
-    height: 100%;
-    width: 100%;
-    background-color: #F5F5F5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    align-self: center;
-    justify-content: center;
-    height: 625px;
-    
+.log-container {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  margin-top: 80px;
+  border: 2px solid black;
+  padding: 10px;
+  font-family: Roboto;
 }
 
-.Main-form{
-    width: 400px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    align-self: center;
-    background-color: white;
-    border: 2px solid #4C57B6;
-    border-radius: 3px;
-}
-a{
-    text-decoration: none;
-    color: #4C57B6;
-    font-weight: bold;
-}
-.Main-form .logo img{
-    margin: 20px;
-    position: relative;
-    bottom: 35px;
-}
-.Main-form .Paragraph p{
-    position: relative;
-    bottom: 30px;
-}
-.form .Input-1{
-    width: 300px;
-    position: relative;
-    bottom: 10px;
-    border: 1px solid #E2E2E2;
-    border-radius: 3px;
-}
-.form .Input-2{
-    width: 300px;
-    position: relative;
-    left: 10px;
-    margin-top: 30px;
-    border: 1px solid #E2E2E2;
-    border-radius: 3px;
-}
-.form .Toggle-icon{
-    position: relative;
-    right: 15px;
-}
-.form .Tonew button{
-    width: 300px;
-    background-color: #4C57B6;
-    border: 2px solid #4C57B6;
-    border-radius: 3px;
-    color: white;
-    margin-top: 35px;
+.log-paragraph {
+  margin-top: 20px;
+  font-weight: 700;
+  margin-left: 35px;
 }
 
+.log-logo {
+  margin-top: 20px;
+  margin-left: 150px;
+}
 
+.log-input {
+  width: 300px;
+  height: 25px;
+  margin-top: 20px;
+  margin-left: 45px;
+}
 
+.no-account {
+  margin-top: 20px;
+  margin-left: 120px;
+}
 
+.reg-link {
+  margin-top: 20px;
+  margin-left: 135px;
+}
