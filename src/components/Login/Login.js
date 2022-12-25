@@ -30,7 +30,7 @@ const Login = () => {
     const data = { email, password };
     localStorage.setItem("userId", data.email);
 
-    const res = await fetch("http://localhost:5000/login", {
+    const res = await fetch("https://realestatehrrm.onrender.com/login", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

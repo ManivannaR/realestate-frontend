@@ -6,7 +6,7 @@ const PropertyTable = () => {
   const [sold, setSold] = useState("Unsold");
 
   const fetchPropertyDisplayDatas = async () => {
-    const res = await fetch("http://localhost:5000/property");
+    const res = await fetch("https://realestatehrrm.onrender.com/property");
     const { data } = await res.json();
     setPropertyDisplayDatas(data);
   };

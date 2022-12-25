@@ -53,13 +53,16 @@ const SignUp = () => {
     } else if (data.password !== confirmPassword) {
       alert("Password and Confirm Password does not match.");
     } else {
-      const result = await fetch("http://localhost:5000/register", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
+      const result = await fetch(
+        "https://realestatehrrm.onrender.com/register",
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-type": "application/json",
+          },
+        }
+      );
       const resData = await result.json();
       if (resData.status === "Failed") {
         alert(resData.message);
